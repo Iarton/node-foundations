@@ -20,7 +20,13 @@ class CreateTransactionService {
       throw Error('Balanço Invalido');
     }
 
-    return this.transactionsRepository.create({ title, value, type });
+    const transaction = this.transactionsRepository.create({
+      title,
+      value,
+      type,
+    });
+
+    return transaction;
   }
 }
 
